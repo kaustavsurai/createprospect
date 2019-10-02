@@ -1,6 +1,6 @@
 ---
 application:
 -name: createprospect
- instance: 1
+ instances: 1
  memory: 900m
  path: target/createprospect-0.0.1-SNAPSHOT.jar
