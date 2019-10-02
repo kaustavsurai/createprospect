@@ -25,7 +25,7 @@ pipeline {
                 credentialsId: 'PCF_LOGIN',
                 usernameVariable: 'kaustav541@gmail.com',
                 passwordVariable: 'Delhi-2021']]) {
-                    bat 'cf login -a https://api.run.pivotal.io -u $USERNAME -p $PASSWORD'
+                    bat 'cf login -a https://api.run.pivotal.io -u kaustav541@gmail.com -p Delhi-2021'
                     bat 'cf push'
                 }
             }
