@@ -1,6 +1,5 @@
 ---
-application:
--name: createprospect
- instances: 1
- memory: 900m
- path: target/createprospect-0.0.1-SNAPSHOT.jar
+applications:
+- name: createprospect
+  memory: 800m
+  path: target/createprospect-0.0.1-SNAPSHOT.jar
