@@ -45,4 +45,9 @@ public class ContactController {
     public void deleteContact(@PathVariable("name") String name){
         contactRepository.deleteByName(name);
     }
+
+    @GetMapping("/test")
+    public String test(){
+        return "Hello Pivotal";
+    }
 }
