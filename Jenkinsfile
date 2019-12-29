@@ -21,8 +21,7 @@ pipeline {
             steps{
                 bat 'docker login --username kaustavsurai --password Howrah-2019'
                 bat 'docker image build -t springbootmongo .'
-                bat 'docker run --name springmongo -p 8080:8080 -d springbootmongo:latest'
-                bat 'docker tag springbootmongo1 kaustavsurai/springbootmongo'
+                bat 'docker tag springbootmongo kaustavsurai/springbootmongo'
                 bat 'docker push kaustavsurai/springbootmongo'
             }
         }
