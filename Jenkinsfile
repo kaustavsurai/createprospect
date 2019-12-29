@@ -17,7 +17,16 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        stage('Deploy to Docker'){
+            steps{
+                bat 'docker login --username kaustavsurai --password Howrah-2019'
+                bat 'docker image build -t springbootmongo .'
+                bat 'docker run --name springmongo -p 8080:8080 -d springbootmongo:latest'
+                bat 'docker tag springbootmongo1 kaustavsurai/springbootmongo'
+                bat 'docker push kaustavsurai/springbootmongo'
+            }
+        }
+        stage('Deploy to pcf') {
             steps {
                 echo 'Deploying....'
 
@@ -26,7 +35,7 @@ pipeline {
                 usernameVariable: 'kaustav541@gmail.com',
                 passwordVariable: 'Howrah-2020']]) {
                     bat 'cf login -a https://api.run.pivotal.io -u kaustav541@gmail.com -p Howrah-2020'
-                    bat 'cf push'
+                    bat 'cf push createprospect --docker-image kaustavsurai/springbootmongo --random-route -i 1 -m 1024M -t 180 -k 3G'
                 }
             }
         }

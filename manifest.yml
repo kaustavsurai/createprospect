@@ -2,4 +2,4 @@
 applications:
 - name: createprospect
   memory: 800m
-  path: target/createprospect-0.0.1-SNAPSHOT.war
+  path: target/springbootdocker.war
