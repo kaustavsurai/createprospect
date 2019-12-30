@@ -35,7 +35,7 @@ pipeline {
                 passwordVariable: 'Howrah-2020']]) {
                     bat 'cf login -a https://api.run.pivotal.io -u kaustav541@gmail.com -p Howrah-2020'
                     bat 'start cmd.exe'
-                    bat 'cf push createprospect --docker-image kaustavsurai/springbootmongo --random-route -i 1 -m 1024M -t 180 -k 3G'
+                    bat 'cf push createprospect --docker-image kaustavsurai/springbootmongo --random-route -i 1 -m 1024M -t 180 -k 5G'
                 }
             }
         }
